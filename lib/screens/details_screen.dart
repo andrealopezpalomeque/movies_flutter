@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:movies_flutter/models/models.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Movie movie = ModalRoute.of(context)!.settings.arguments as Movie;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('movie.title'),
+        title: const Text('Movie Details'),
       ),
-      body: const Center(
-        child: Text('Details Screen'),
+      body: Center(
+        child: Text(movie.title),
       ),
     );
   }
